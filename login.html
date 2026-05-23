@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Piece Store - Acceso Nakama</title>
+    
+    <link rel="stylesheet" href="CSS/estilo.css">
+    
+    <script src="https://kit.fontawesome.com/2600c6ce36.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="IMG/logo_op.png" alt="Logo One Piece" class="logo-hero">         
+            <h1>ONE PIECE <span class="highlight">STORE</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="proyecto.html">Inicio</a></li>
+                <li><a href="proyecto.html#acerca-de">Acerca de</a></li> 
+                <li><a href="proyecto.html#colecciones">Colecciones</a></li>
+                <li><a href="proyecto.html#contacto">Contacto</a></li>
+                <li><a href="login.html" class="btn-login">INICIAR SESIÓN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="login-wrapper">
+
+        <div class="login-container" id="box-login">
+            <h2>☠️ INICIAR SESIÓN</h2>
+            <form onsubmit="event.preventDefault(); alert('¡Bienvenido a bordo, Nakama! 🏴‍☠️'); window.location.href='proyecto.html';">
+                <div class="form-group">
+                    <label><i class="fa-solid fa-user"></i> Usuario o Correo Pirata:</label>
+                    <input type="text" placeholder="Ej: luffy@grandline.com" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-lock"></i> Contraseña:</label>
+                    <input type="password" placeholder="********" required>
+                </div>
+                <button type="submit" class="btn-submit">ZARPAR (INGRESAR)</button>
+            </form>
+            <div class="login-links">
+                <a href="#" onclick="cambiarVista('box-registro')">¿No tienes cuenta? Regístrate aquí</a> <br>
+                <a href="#" onclick="cambiarVista('box-recovery')">¿Olvidaste tu contraseña?</a>
+            </div>
+        </div>
+
+        <div class="login-container hidden" id="box-registro">
+            <h2>📜 UNIRSE A LA TRIPULACIÓN</h2>
+            <form onsubmit="event.preventDefault(); alert('¡Registro completado con éxito! Tu recompensa empieza en ฿0.'); cambiarVista('box-login');">
+                <div class="form-group">
+                    <label><i class="fa-solid fa-id-card"></i> Nombre Completo:</label>
+                    <input type="text" placeholder="Ej: Monkey D. Luffy" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-envelope"></i> Correo Electrónico:</label>
+                    <input type="email" placeholder="nakama@correo.com" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-key"></i> Crear Contraseña:</label>
+                    <input type="password" placeholder="Mínimo 6 caracteres" required>
+                </div>
+                <button type="submit" class="btn-submit">CREAR NUEVO USUARIO</button>
+            </form>
+            <div class="login-links">
+                <a href="#" onclick="cambiarVista('box-login')">¿Ya eres miembro de esta tripulacion? Inicia Sesión</a>
+            </div>
+        </div>
+
+        <div class="login-container hidden" id="box-recovery">
+            <h2>⚓ RECUPERAR ACCESO</h2>
+            <p class="recovery-text">
+                Introduce tu correo de nakama y te enviaremos un Den Den Mushi con las instrucciones para restablecer tu contraseña.
+            </p>
+            <form onsubmit="event.preventDefault(); alert('¡Instrucciones enviadas! Revisa tu correo electrónico.'); cambiarVista('box-login');">
+                <div class="form-group">
+                    <label><i class="fa-solid fa-paper-plane"></i> Correo Registrado:</label>
+                    <input type="email" placeholder="tu-correo@grandline.com" required>
+                </div>
+                <button type="submit" class="btn-submit">ENVIAR ENLACE</button>
+            </form>
+            <div class="login-links">
+                <a href="#" onclick="cambiarVista('box-login')">Regresar al Inicio de Sesión</a>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        function cambiarVista(idFormulario) {
+            document.getElementById('box-login').classList.add('hidden');
+            document.getElementById('box-registro').classList.add('hidden');
+            document.getElementById('box-recovery').classList.add('hidden');
+            document.getElementById(idFormulario).classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>

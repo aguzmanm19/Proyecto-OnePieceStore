@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Piece sitio web - Alison Guzmán</title>
+    
+    <link rel="stylesheet" href="CSS/estilo.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    
+    <script src="https://kit.fontawesome.com/2600c6ce36.js" crossorigin="anonymous"></script>
+</head>
+<body>
+   
+    <header>
+        <div class="logo-container">
+            <img src="IMG/logo_op.png" alt="Logo One Piece" class="logo-hero">         
+            <h1>ONE PIECE <span class="highlight">STORE</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="proyecto.html">Inicio</a></li>
+                <li><a href="acercade.html">Acerca de</a></li>
+                <li><a href="colecciones.html">Colecciones</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="login.html" class="btn-login">INICIAR SESIÓN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="banner">
+        <div id="mi-slider">
+            
+            <div class="slide-item">
+                <img src="IMG/slider_onepiece.jpg" alt="Banner Pirata">
+                <div class="caption">
+                    <h2>CENTRO DE NOVEDADES Y ARTÍCULOS DE COLECCIÓN</h2>
+                    <a href="#colecciones" class="btn-slider">¡VER TESOROS!</a>
+                </div>
+            </div>
+
+            <div class="slide-item">
+                <img src="IMG/slider_wano.jpg" alt="Arco de Wano Colección">
+                <div class="caption">
+                    <h2>¡NUEVA COLECCIÓN DEL ARCO DE WANO!</h2>
+                    <a href="#colecciones" class="btn-slider">VER FIGURAS</a>
+                </div>
+            </div>
+
+            <div class="slide-item">
+                <img src="IMG/slider_funkos.jpg" alt="Funkos de One Piece">
+                <div class="caption">
+                    <h2>LOS MEJORES FUNKO POPS REUNIDOS</h2>
+                    <a href="#colecciones" class="btn-slider">EXPLORAR</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="acerca-de" class="container-info">
+        <div class="info-box valores">
+            <h3>NUESTROS VALORES</h3>
+            <p>Lealtad, aventura y alto apego a la ética profesional en el Grand Line.</p>
+        </div>
+
+        <div class="info-box mision">
+            <h3>NUESTRA MISIÓN</h3>
+            <p>Proveer artículos integrales, innovadores y de excelencia para todos los nakamas.</p>
+        </div>
+
+        <div class="info-box vision">
+            <h3>NUESTRA VISIÓN</h3>
+            <p>Ser la mejor tienda de colección en Guatemala con calor humano y excelencia.</p>
+        </div>
+    </section>
+
+    <section id="colecciones">
+        <h2>🏴‍☠️ COLECCIONES DISPONIBLES</h2>
+        <p>
+            Explora los mejores tesoros traídos directamente del Nuevo Mundo. Muy pronto tendremos listos nuestros catálogos de Figuras de Acción, Ropa Temática, Mangas Especiales y réplicas de las Frutas del Diablo.
+        </p>
+    </section>
+
+    <footer id="contacto">
+        <div class="social">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-youtube"></i>
+            <i class="fa fa-whatsapp"></i>
+        </div>
+
+        <div class="footer-info">
+            <p><strong>Inga. Evelyn Yesenia Lobos Barrera</strong></p>
+            <p>Introducción a los sistemas de computación</p>
+        </div>
+    </footer>
+
+    <script>
+        $(document).ready(function(){
+            $('#mi-slider').bxSlider({
+                auto: true,
+                pause: 4000,
+                speed: 800,
+                controls: false,
+                pager: true
+            });
+        });
+    </script>
+
+</body>
+</html>
