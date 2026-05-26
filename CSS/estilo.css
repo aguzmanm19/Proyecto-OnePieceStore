@@ -608,16 +608,19 @@ footer {
 
 /* Cada diapositiva individual */
 .slide {
-    width: 20%; /* Cada una ocupa el 20% del total (100% visible) */
+    width: 20%; 
     height: 100%;
+    background-color: #1a1a1a; /* Opcional: Fondo oscuro para llenar los bordes vacíos si la foto no es panorámica */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Evita que las imágenes se deformen */
+    object-fit: contain; /* <-- CAMBIA 'cover' POR 'contain' AQUÍ */
 }
-
 /* Puntos de navegación en la parte inferior */
 .slider-navigation {
     position: absolute;
