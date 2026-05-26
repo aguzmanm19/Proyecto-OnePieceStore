@@ -565,3 +565,96 @@ footer {
     z-index: 5;
     text-transform: uppercase;
 }
+
+/* ===================================================
+   ESTILOS PARA EL SLIDER DE ONE PIECE STORE
+=================================================== */
+
+.slider-wrapper {
+    width: 100%;
+    max-width: 800px; /* Tamaño máximo del carrusel */
+    margin: 40px auto 20px auto; /* Centrado y separado del texto */
+    text-align: center;
+}
+
+.slider-title {
+    color: #ffcc00; /* Color llamativo estilo anime/One Piece */
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.slider-container {
+    width: 100%;
+    height: 450px; /* Ajusta la altura según prefieras tus fotos */
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); /* Sombra para resaltar */
+}
+
+/* Ocultar los inputs de radio */
+.slider-container input[type="radio"] {
+    display: none;
+}
+
+/* Contenedor de todas las diapositivas en línea recta */
+.slides {
+    width: 500%; /* 5 fotos = 500% de ancho total */
+    height: 100%;
+    display: flex;
+    transition: transform 0.6s ease-in-out; /* Transición suave de deslizamiento */
+}
+
+/* Cada diapositiva individual */
+.slide {
+    width: 20%; /* Cada una ocupa el 20% del total (100% visible) */
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Evita que las imágenes se deformen */
+}
+
+/* Puntos de navegación en la parte inferior */
+.slider-navigation {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.bar {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.bar:hover {
+    background-color: #ffcc00;
+}
+
+/* Lógica de movimiento usando CSS Puro */
+#slide1:checked ~ .slides { transform: translateX(0%); }
+#slide2:checked ~ .slides { transform: translateX(-20%); }
+#slide3:checked ~ .slides { transform: translateX(-40%); }
+#slide4:checked ~ .slides { transform: translateX(-60%); }
+#slide5:checked ~ .slides { transform: translateX(-80%); }
+
+/* Cambiar el color del punto de navegación activo */
+#slide1:checked ~ .slider-navigation .bar:nth-child(1),
+#slide2:checked ~ .slider-navigation .bar:nth-child(2),
+#slide3:checked ~ .slider-navigation .bar:nth-child(3),
+#slide4:checked ~ .slider-navigation .bar:nth-child(4),
+#slide5:checked ~ .slider-navigation .bar:nth-child(5) {
+    background-color: #ffcc00; /* Resalta el punto actual */
+    width: 25px; /* Lo hace un poco más alargado para estilo moderno */
+    border-radius: 10px;
+}
