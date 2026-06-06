@@ -1,0 +1,808 @@
+/* --- CONFIGURACIÓN GENERAL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial Black', sans-serif;
+    background-color: #000; /* Fondo negro para resaltar colores */
+    color: white;
+    overflow-x: hidden;
+}
+
+/* --- HEADER Y NAVEGACIÓN --- */
+header {
+    background: linear-gradient(90deg, #FF0000 0%, #800000 100%);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid #FFD700; 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo Grande y con Sombra */
+.logo-hero {
+    height: 120px; 
+    width: auto;
+    background: transparent !important;
+    filter: drop-shadow(0px 0px 15px rgba(0,0,0,0.6));
+    transition: transform 0.3s ease;
+}
+
+.logo-hero:hover {
+    transform: scale(1.1) rotate(-3deg);
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin-left: 15px;
+}
+
+.highlight {
+    color: #FFD700;
+    text-shadow: 2px 2px #000;
+}
+
+/* Menú con animación de línea inferior */
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 5px;
+    transition: 0.3s;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #FFD700;
+    left: 0;
+    bottom: 0;
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: #FFD700;
+}
+
+/* Botón Iniciar Sesión (Estilo Destacado) */
+.btn-login {
+    background-color: #FFD700;
+    color: #000 !important;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 4px #b8860b;
+}
+
+.btn-login:hover {
+    background-color: #fff;
+    transform: scale(1.05);
+}
+
+/* --- SECCIÓN DEL BANNER PRINCIPAL --- */
+.banner {
+    width: 100%;
+    position: relative;
+    border-bottom: 5px solid #FF0000;
+    background-color: #000;
+}
+
+/* Contenedores para las múltiples imágenes */
+.slide-item {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Alto fijo de tu banner */
+}
+
+.slide-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.caption {
+    position: absolute;
+    bottom: 0;
+    background: rgba(255, 0, 0, 0.85);
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    z-index: 10;
+}
+
+.caption h2 {
+    color: #ffd700;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* BOTON DE ACCION EN SLIDER */
+.btn-slider {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #FFD700;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 4px #b8860b;
+    transition: 0.2s;
+}
+
+.btn-slider:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px #b8860b;
+    background-color: #fff;
+}
+
+/* Ajuste estético para los puntitos indicadores de bxSlider */
+.bx-wrapper {
+    margin-bottom: 0 !important;
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+}
+.bx-wrapper .bx-pager {
+    bottom: 95px !important; /* Coloca los puntitos justo sobre la franja roja */
+    z-index: 20;
+}
+
+/* --- SECCIÓN INFORMATIVA (TARJETAS) --- */
+.container-info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 60px 5%;
+    gap: 30px;
+}
+
+.info-box {
+    background-color: #1a1a1a;
+    padding: 40px;
+    border: 3px solid #FFD700;
+    border-radius: 15px;
+    text-align: center;
+    width: 30%;
+    min-width: 300px;
+    transition: all 0.4s ease;
+}
+
+/* Animación de elevación al pasar el mouse */
+.info-box:hover {
+    transform: translateY(-15px);
+    border-color: #FF0000;
+    box-shadow: 0 10px 25px rgba(255, 0, 0, 0.4);
+}
+
+.info-box h3 {
+    color: #FF0000;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+}
+
+.info-box h3::before {
+    content: '☠️ '; /* Decoración temática */
+}
+
+.info-box p {
+    line-height: 1.6;
+    color: #ddd;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #000;
+    border-top: 4px solid #FF0000;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.social {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.social i {
+    margin: 0 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+}
+
+.social i:hover {
+    color: #FFD700;
+}
+
+.footer-info p {
+    color: #ffffff;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.footer-info strong {
+    color: #FFD700;
+}
+
+/* --- SECCIÓN COLECCIONES --- */
+#colecciones {
+    padding: 80px 5%;
+    text-align: center;
+    background-color: #0b0b0b;
+    border-top: 3px solid #FF0000;
+    border-bottom: 3px solid #FF0000;
+}
+
+#colecciones h2 {
+    color: #FFD700;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    font-family: 'Arial Black', sans-serif;
+}
+
+#colecciones p {
+    color: #ddd;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* --- SECCIÓN EXCLUSIVA PARA LA PÁGINA DE LOGIN --- */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 154px);
+    padding: 40px 20px;
+    background-color: #000;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 450px;
+    background-color: #1a1a1a;
+    border: 3px solid #FFD700;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0px 0px 25px rgba(255, 0, 0, 0.4);
+    text-align: center;
+}
+
+.login-container h2 {
+    color: #FF0000;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    text-shadow: 2px 2px #000;
+    font-family: 'Arial Black', sans-serif;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    color: #FFD700;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #FF0000;
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #FFD700;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px #b8870b;
+    transition: 0.2s;
+    margin-top: 10px;
+    font-family: 'Arial Black', sans-serif;
+}
+
+.btn-submit:hover {
+    background-color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px #b8860b;
+}
+
+.login-links {
+    margin-top: 25px;
+    font-size: 13px;
+}
+
+.login-links a {
+    color: #ddd;
+    text-decoration: none;
+    display: inline-block;
+    margin: 8px 10px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.login-links a:hover {
+    color: #FFD700;
+    text-decoration: underline;
+}
+
+.recovery-text {
+    color: #ddd;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Clase para ocultar los formularios activos en JS */
+.hidden {
+    display: none !important;
+}
+
+/* --- SECCIÓN EXCLUSIVA PARA LA PÁGINA ACERCA DE --- */
+.about-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.about-hero {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.about-hero h2 {
+    color: #FFD700;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px #FF0000;
+    font-family: 'Arial Black', sans-serif;
+}
+
+.about-hero p {
+    color: #ddd;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.about-content {
+    background-color: #1a1a1a;
+    border: 3px solid #FFD700;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0px 0px 25px rgba(255, 0, 0, 0.3);
+}
+
+.about-text-box h3 {
+    color: #FF0000;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-family: 'Arial Black', sans-serif;
+}
+
+.about-text-box h3::before {
+    content: '⚓';
+}
+
+.about-text-box p {
+    color: #eee;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif; /* Cambiado a una fuente más legible para bloques largos de texto */
+}
+
+.about-text-box strong {
+    color: #FFD700;
+}
+
+/* --- SECCIÓN EXCLUSIVA PARA LA PÁGINA DE COLECCIONES --- */
+.catalog-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.catalog-title {
+    text-align: center;
+    color: #FFD700;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px #FF0000;
+    font-family: 'Arial Black', sans-serif;
+}
+
+.catalog-subtitle {
+    text-align: center;
+    color: #ddd;
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+}
+
+/* Cuadrícula adaptable para las tarjetas de productos */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* Estilo individual de la tarjeta de producto */
+.product-card {
+    background-color: #1a1a1a;
+    border: 3px solid #FFD700;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    border-color: #FF0000;
+    box-shadow: 0 10px 20px rgba(255, 0, 0, 0.4);
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 2px solid #333;
+}
+
+.product-info {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-info h3 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    font-family: 'Arial Black', sans-serif;
+}
+
+.product-info .category {
+    color: #888;
+    font-size: 12px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.product-info .price {
+    color: #FFD700;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: auto;
+    margin-bottom: 15px;
+}
+
+/* Botón de compra interno */
+.btn-buy {
+    width: 100%;
+    padding: 10px;
+    background-color: #FF0000;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    font-family: 'Arial Black', sans-serif;
+}
+
+.btn-buy:hover {
+    background-color: #FFD700;
+    color: #000;
+}
+
+/* Pequeñas etiquetas flotantes (Nuevo / Exclusivo) */
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #FF0000;
+    color: #fff;
+    padding: 5px 12px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 50px;
+    border: 1px solid #FFD700;
+    z-index: 5;
+    text-transform: uppercase;
+}
+
+/* ===================================================
+   ESTILOS PARA EL SLIDER DE ONE PIECE STORE
+=================================================== */
+
+.slider-wrapper {
+    width: 100%;
+    max-width: 800px; /* Tamaño máximo del carrusel */
+    margin: 40px auto 20px auto; /* Centrado y separado del texto */
+    text-align: center;
+}
+
+.slider-title {
+    color: #ffcc00; /* Color llamativo estilo anime/One Piece */
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.slider-container {
+    width: 100%;
+    height: 450px; /* Ajusta la altura según prefieras tus fotos */
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); /* Sombra para resaltar */
+}
+
+/* Ocultar los inputs de radio */
+.slider-container input[type="radio"] {
+    display: none;
+}
+
+/* Contenedor de todas las diapositivas en línea recta */
+.slides {
+    width: 500%; /* 5 fotos = 500% de ancho total */
+    height: 100%;
+    display: flex;
+    transition: transform 0.6s ease-in-out; /* Transición suave de deslizamiento */
+}
+
+/* Cada diapositiva individual */
+.slide {
+    width: 20%; 
+    height: 100%;
+    background-color: #1a1a1a; /* Opcional: Fondo oscuro para llenar los bordes vacíos si la foto no es panorámica */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* <-- CAMBIA 'cover' POR 'contain' AQUÍ */
+}
+/* Puntos de navegación en la parte inferior */
+.slider-navigation {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.bar {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.bar:hover {
+    background-color: #ffcc00;
+}
+
+/* Lógica de movimiento usando CSS Puro */
+#slide1:checked ~ .slides { transform: translateX(0%); }
+#slide2:checked ~ .slides { transform: translateX(-20%); }
+#slide3:checked ~ .slides { transform: translateX(-40%); }
+#slide4:checked ~ .slides { transform: translateX(-60%); }
+#slide5:checked ~ .slides { transform: translateX(-80%); }
+
+/* Cambiar el color del punto de navegación activo */
+#slide1:checked ~ .slider-navigation .bar:nth-child(1),
+#slide2:checked ~ .slider-navigation .bar:nth-child(2),
+#slide3:checked ~ .slider-navigation .bar:nth-child(3),
+#slide4:checked ~ .slider-navigation .bar:nth-child(4),
+#slide5:checked ~ .slider-navigation .bar:nth-child(5) {
+    background-color: #ffcc00; /* Resalta el punto actual */
+    width: 25px; /* Lo hace un poco más alargado para estilo moderno */
+    border-radius: 10px;
+}
+
+/* ==========================================================================
+   Estilos específicos para la pestaña Acerca de Mí (Alison Guzmán)
+   ========================================================================== */
+
+.me-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.hero-custom {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.me-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+/* Cambio a dos columnas en pantallas medianas y grandes */
+@media (min-width: 768px) {
+    .me-grid { 
+        grid-template-columns: 1fr 1fr; 
+    }
+}
+
+.card-nakama {
+    background: rgba(255, 255, 255, 0.05); /* Sutil transparencia que se acopla a fondos oscuros */
+    border: 2px solid #ffcc00;             /* Dorado pirata característico */
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.card-nakama h3 {
+    color: #ffcc00;
+    border-bottom: 2px dashed #ffcc00;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.list-items li {
+    margin-bottom: 10px;
+}
+
+/* Grillas de las galerías musicales y fotos */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.album-item {
+    text-align: center;
+}
+
+.album-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #fff;
+}
+
+.album-text {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* Galería específica para las fotos del cielo */
+.sky-gallery img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto interactivo al pasar el mouse sobre tus fotos */
+.sky-gallery img:hover {
+    transform: scale(1.05);
+    border-color: #ffcc00;
+}
+
+/* ==========================================================================
+   Nuevos estilos para la lista de Artistas Favoritos con Imagen
+   ========================================================================== */
+
+.artists-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.artist-item {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 258, 0, 0.3);
+    border-radius: 6px;
+    padding: 10px 15px;
+    transition: background 0.3s ease;
+}
+
+.artist-item:hover {
+    background: rgba(255, 252, 0, 0.05);
+    border-color: #ffcc00;
+}
+
+.artist-rank {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffcc00;
+    margin-right: 15px;
+    min-width: 20px;
+    text-align: center;
+}
+
+.artist-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%; /* Esto hace la foto completamente redonda */
+    border: 2px solid #fff;
+    margin-right: 15px;
+}
+
+.artist-info h4 {
+    margin: 0 0 5px 0;
+    color: #fff;
+    font-size: 16px;
+}
+
+.artist-info p {
+    margin: 0;
+    font-size: 13px;
+    color: #ccc;
+}
